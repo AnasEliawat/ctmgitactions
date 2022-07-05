@@ -1,7 +1,7 @@
 name: CTM deployment workflow - pull from repo
 on: 
-  push:
-  branches: [master]
+  [push]:
+  branches: [ master ]
 jobs:
   job-pull:
     name: pull-ctm-job
