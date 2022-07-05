@@ -15,4 +15,5 @@ jobs:
         username: aelaiwat
         key: ${{ secrets.CTM_SSH_SECRET}}
         port: 22
+        debug: true
     
