@@ -7,13 +7,16 @@ jobs:
   pull-ctm-job:
     name: pull-ctm-job
     runs-on: ubuntu-latest
-    steps:
-    - name: pull ctm from master repositary and put it inside 172.20.0.200 server
-      uses: appleboy/ssh-action@master
-      with:
-        host: 172.20.0.200
-        username: aelaiwat
-        key: ${{ secrets.CTM_SSH_SECRET}}
-        port: 22
-        debug: true
+    steps:    
+      - uses: actions/checkout@v2
+      - name: Deploy source-code
+        uses: appleboy/scp-action@master
+        env:
+          HOST: ${{ secrets.SSH_HOST }}
+          USERNAME: ${{ secrets.SSH_USERNAME }}
+          PORT: 22
+          KEY: ${{ secrets.SSH_KEY }}
+        with:
+          source: "*"
+          target: "/home/gitactionuser/test"
     
