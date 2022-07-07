@@ -7,7 +7,6 @@ jobs:
   build-on-ubuntu:
     runs-on: ubuntu-latest
     steps:         
-      - name: Step 2 - Checkout the main GitHub branch.
       - uses: actions/checkout@v2      
       - name: Step 3 - Deploy source-code to ${{ secrets.SSH_HOST }} host
         uses: appleboy/scp-action@master
