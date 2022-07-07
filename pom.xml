@@ -7,7 +7,7 @@
   <groupId>com.madfo.gw</groupId>
   <artifactId>MadfoGW</artifactId>
   <version>1.2.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
