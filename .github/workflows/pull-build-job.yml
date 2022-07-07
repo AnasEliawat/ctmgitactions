@@ -23,10 +23,21 @@ jobs:
         with:
              java-version: 1.8
      
-      - name: Build with Maven
-        run: mvn clean install --file pom.xml
      
-      - name: Step 2 - copy file via ssh key
+      - name: Step 3 - Have GitHub Actions Build Maven Project
+        run: |
+          mvn -B package --file pom.xml
+          mkdir staging && cp target/*.jar staging
+          
+      - name: Step 4 - Set up a cache for Maven
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+          
+     
+      - name: Step 4 - copy file via ssh key
         uses: appleboy/scp-action@master
         env:
           HOST: ${{ secrets.SSH_HOST }}
