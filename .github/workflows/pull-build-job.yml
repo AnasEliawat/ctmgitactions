@@ -36,7 +36,9 @@ jobs:
         run: pwd                 
         shell: sh
           
-      - name: Step 3 - start clean install
-        run: mvn -f pom.xml clean install -DoutputDirectory= /home/gitactionuser/test                 
+      - name: Step 3 - the current working  dir
+        run: mvn -f pom.xml clean install     
         shell: sh
     
+      - name: Step 1 - Log the pre-build disc space
+        run: ls
