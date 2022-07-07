@@ -34,10 +34,10 @@ jobs:
 
         
       - name: Experiment
-        working-directory: ./home/gitactionuser/test
+        working-directory: ./test
         run: |
           ls
-          cd home/gitactionuser/test/
+          cd ~/home/gitactionuser/test/
           ls
           pwd             
           mkdir hello
