@@ -32,7 +32,11 @@ jobs:
           source: "*"
           target: "/home/gitactionuser/test"
           
+      - name: Step x - Log the pre-build disc space
+        run: pwd                 
+        shell: sh
+          
       - name: Step 3 - start clean install
-        run: mvn -f pom.xml clean install                  
+        run: mvn -f pom.xml clean install -DoutputDirectory= /home/gitactionuser/test                 
         shell: sh
     
