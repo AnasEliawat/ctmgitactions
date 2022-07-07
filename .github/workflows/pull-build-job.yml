@@ -24,8 +24,7 @@ jobs:
              java-version: 1.8
      
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
-     
+        run: mvn clean install --file pom.xml
      
       - name: Step 2 - copy file via ssh key
         uses: appleboy/scp-action@master
