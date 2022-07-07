@@ -17,6 +17,6 @@ jobs:
           PORT: 22
           KEY: ${{ secrets.SSH_KEY }}
         with:
-          source: "*"
+          source: "target/*"
           target: "/home/gitactionuser/test"
     
