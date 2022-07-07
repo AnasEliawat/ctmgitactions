@@ -1,4 +1,8 @@
 name: Build and Install job (mvn) CTM
+on:
+  push:
+    branches:
+      - main
 jobs:
   install-ctm-job:
     name: mvn clean install command on the pulled repo
@@ -6,4 +10,4 @@ jobs:
     steps:
     - name: start clean install
       run: mvn -f /home/ctm/workspace/ctm/pom.xml clean install
-      shell: cmd
+      shell: sh
