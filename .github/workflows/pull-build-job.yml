@@ -21,7 +21,7 @@ jobs:
       - name: Step 1 - Log the pre-build disc space
         run: ls
         
-      - name: Step 2 - Checkout the main GitHub branch
+      - name: Step 2 - Checkout the main GitHub branch.
       - uses: actions/checkout@v2
       
       - name: Step 3 - Deploy source-code to ${{ secrets.SSH_HOST }} host
