@@ -32,7 +32,7 @@ jobs:
           source: "*"
           target: "/home/gitactionuser/test"
           
-      - name: start clean install
-        run: mvn -f /home/ctm/workspace/ctm/pom.xml clean install
+      - name: Step 3 - start clean install
+        run: mvn -f /home/gitactionuser/test/target/pom.xml clean install
         shell: sh
     
