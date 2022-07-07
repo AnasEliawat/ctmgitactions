@@ -36,9 +36,17 @@ jobs:
         run: pwd                 
         shell: sh
           
-      - name: Step 3 - the current working  dir
+      - name: Step 3 - the current working  dir      
         run: mvn -f ~/home/gitactionuser/test/pom.xml clean install     
         shell: sh
     
       - name: Step 1 - Log the pre-build disc space
         run: ls
+        
+      - name: Experiment
+        run: |
+          cd home/gitactionuser/test/
+          pwd             
+          mkdir hello
+          cd hello
+          pwd             
