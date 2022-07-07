@@ -30,11 +30,11 @@ jobs:
           KEY: ${{ secrets.SSH_KEY }}
         with:
           source: "*"
-          target: "/home/gitactionuser/test"
-          
+          target: "/home/gitactionuser/test"        
 
         
       - name: Experiment
+        working-directory: ./home/gitactionuser/test
         run: |
           cd home/gitactionuser/test/
           pwd             
