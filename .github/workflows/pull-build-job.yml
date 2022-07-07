@@ -16,6 +16,7 @@ jobs:
   
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps: 
+      - name: Step 1 - Checkout main branch from GitHub
       - uses: actions/checkout@v2      
     
       - name: Set up JDK 1.8
