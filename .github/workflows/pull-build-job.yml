@@ -1,5 +1,5 @@
 # This is a basic workflow for pull and build CTM using GitHub Actions
-name: CTM deployment workflow - pull from repo
+name: Pull & Build CTM using GitHub Actions
 
 # Controls when the action will run. Triggers the workflow on push request
 # events but only for the main branch
@@ -17,7 +17,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps: 
       - uses: actions/checkout@v2      
-      - name: Step 1 - Deploy source-code to ${{ secrets.SSH_HOST }} host
+      
+      - name: Step 1 - Log the pre-build disc space
+        run: ls
+      
+      - name: Step 2 - Deploy source-code to the host
         uses: appleboy/scp-action@master
         env:
           HOST: ${{ secrets.SSH_HOST }}
@@ -28,5 +32,7 @@ jobs:
           source: "*"
           target: "/home/gitactionuser/test"
           
-          
+      - name: start clean install
+        run: mvn -f /home/ctm/workspace/ctm/pom.xml clean install
+        shell: sh
     
