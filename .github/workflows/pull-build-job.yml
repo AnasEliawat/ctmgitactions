@@ -33,6 +33,6 @@ jobs:
           target: "/home/gitactionuser/test"
           
       - name: Step 3 - start clean install
-        run: mvn -f /home/gitactionuser/test/target/pom.xml clean install
+        run: mvn -f /home/gitactionuser/test/pom.xml clean install                  
         shell: sh
     
