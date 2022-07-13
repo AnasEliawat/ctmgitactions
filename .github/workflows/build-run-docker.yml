@@ -17,7 +17,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps: 
     
-      - name: Step 1 - copy file via ssh key
+      - name: Step 1 - executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
         env:
           HOST: ${{ secrets.SSH_HOST }}
@@ -25,5 +25,5 @@ jobs:
           PORT: 22
           KEY: ${{ secrets.SSH_KEY }}
           script: |
-             whoami
+             whoami ss
              ls -al
