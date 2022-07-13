@@ -1,17 +1,17 @@
 # This is a basic workflow for build and run docker file
-name: build and run docker file using GitHub Actions
+name: build-run-docker
 
 # Only trigger, when the build workflow succeeded
 on:
   workflow_run:
-    workflows: ["pull-build-install"]
+    workflows: ["pull-install-source-code"]
     types:
       - completed
       
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel    
 jobs:
   # The first job in this workflow is named build-on-ubuntu
-  build-run-docker-job:
+  build-run-docker:
     runs-on: ubuntu-latest
   
     # Steps represent a sequence of tasks that will be executed as part of the job

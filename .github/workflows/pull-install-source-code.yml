@@ -1,5 +1,5 @@
 # This is a basic workflow for pull and build CTM using GitHub Actions
-name: pull-build-install
+name: pull-install-source-code
 
 # Controls when the action will run. Triggers the workflow on push request
 # events but only for the main branch
@@ -11,7 +11,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel    
 jobs:
   # The first job in this workflow is named build-on-ubuntu
-  pull-build-install-job:
+  pull-build-install:
     runs-on: ubuntu-latest
   
     # Steps represent a sequence of tasks that will be executed as part of the job
