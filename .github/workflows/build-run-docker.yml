@@ -26,4 +26,4 @@ jobs:
           KEY: ${{ secrets.SSH_KEY }}
           script: |
            whoami
-           ls -al
+           docker container ls
