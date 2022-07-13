@@ -29,7 +29,7 @@ jobs:
       - name: Step 3 - Have GitHub Actions Build Maven Project
         run: |
           mvn -f pom.xml clean install
-      # Uncomment if you want to meve  the jar files # mkdir staging && cp target/*.jar staging
+      # Uncomment if you want to meve  the jar files # mkdir staging && cp target/*.jar staginggggg
           
       - name: Step 4 - Set up a cache for Maven
         uses: actions/cache@v2
