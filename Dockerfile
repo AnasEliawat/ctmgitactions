@@ -1,5 +1,5 @@
     FROM openjdk:8
-    ADD target/MadfoGW-1.2.1-SNAPSHOT-fat.jar MadfoGW-1.2.1-SNAPSHOT-fat.jar
+    ADD target/MadfoGW-fat.jar MadfoGW-fat.jar
 	ENV TZ Asia/Amman
-	ENTRYPOINT ["java" , "-jar" , "MadfoGW-1.2.1-SNAPSHOT-fat.jar"]
+	ENTRYPOINT ["java" , "-jar" , "MadfoGW-fat.jar"]
 	EXPOSE 8080
