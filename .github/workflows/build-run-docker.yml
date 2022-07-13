@@ -4,7 +4,7 @@ name: build-run-docker
 # Only trigger, when the build workflow succeeded
 on:
   workflow_run:
-    workflows: ["pull-install-github"]
+    workflows: ["pull-install-source-code"]
     types:
       - completed
       
