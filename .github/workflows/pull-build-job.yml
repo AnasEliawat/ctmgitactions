@@ -16,18 +16,20 @@ jobs:
   
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps: 
-      - uses: actions/checkout@v2      
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Step 1 - Checkout main branch from GitHub
+        uses: actions/checkout@v2      
     
-      - name: Set up JDK 1.8
+      # Runs a single command using the runners shell
+      - name: Step 2 - Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
-             java-version: 1.8
-     
+             java-version: 1.8     
      
       - name: Step 3 - Have GitHub Actions Build Maven Project
         run: |
           mvn -f pom.xml clean install
-          mkdir staging && cp target/*.jar staging
+      # Uncomment if you want to meve  the jar files # mkdir staging && cp target/*.jar staging
           
       - name: Step 4 - Set up a cache for Maven
         uses: actions/cache@v2
@@ -37,7 +39,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
           
      
-      - name: Step 4 - copy file via ssh key
+      - name: Step 5 - copy file via ssh key
         uses: appleboy/scp-action@master
         env:
           HOST: ${{ secrets.SSH_HOST }}
