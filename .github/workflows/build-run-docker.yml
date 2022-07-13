@@ -26,5 +26,5 @@ jobs:
           KEY: ${{ secrets.SSH_KEY }}
         with:
            script: |
-           whoami
-           ls -al
+             whoami
+             ls -al
