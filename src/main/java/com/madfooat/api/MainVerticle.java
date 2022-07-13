@@ -29,7 +29,7 @@ public class MainVerticle extends AbstractVerticle {
     Router router = routesInitialize();
     vertx.createHttpServer(new HttpServerOptions().setCompressionSupported(true).setTcpKeepAlive(!true))
       .requestHandler(router)
-      .listen(8878);//sd
+      .listen(8878);//sds
   }
 
   private Router routesInitialize() {
