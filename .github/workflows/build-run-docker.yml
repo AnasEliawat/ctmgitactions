@@ -19,7 +19,7 @@ jobs:
     
       - name: Step 1 - executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
-        env:
+        with:
           HOST: ${{ secrets.SSH_HOST }}
           USERNAME: ${{ secrets.SSH_USERNAME }}
           PORT: 22
