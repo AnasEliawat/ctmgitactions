@@ -35,5 +35,5 @@ jobs:
            docker build -t git-action-test /home/gitactionuser/test/
            echo "<.. End build  docker image"
            echo "Sart run docker image ..>"
-           docker run -d  --network development_network --network-alias git-action-test_network -v /home/gitactionuser/test/logs:/logs --name git-action-test git-action-test
+           docker run -d -p 8078:8080 -v /home/gitactionuser/test/logs:/logs --name git-action-test git-action-test
            echo "<.. End run docker image"
