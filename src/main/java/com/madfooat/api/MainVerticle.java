@@ -55,7 +55,7 @@ public class MainVerticle extends AbstractVerticle {
 
   private void indexHandler(RoutingContext routingContext) {
     HttpServerResponse response = routingContext.response();
-    response.putHeader("Content-Type", "text/html").end("Hello, This is MadfooatCom deployment test API for git Actions!");
+    response.putHeader("Content-Type", "text/html").end("Hello, This is MadfooatCom deployment test API for git Actions! new 1");
   }
 
 }
