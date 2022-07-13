@@ -17,7 +17,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps: 
     
-      - name: Step 1 - executing remote ssh commands using ssh key
+      - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
         with:
           HOST: ${{ secrets.SSH_HOST }}
@@ -25,5 +25,15 @@ jobs:
           PORT: 22
           KEY: ${{ secrets.SSH_KEY }}
           script: |
-           whoami
-           docker container ls
+           echo "Sart remove old image if it exists ..>"
+           docker stop git-action-test
+           docker rmi --force -f git-action-test
+           docker rm --force -f git-action-test
+           echo "<.. End remove old image if it exists"
+           echo "Start build  docker image ..>"
+           cp /home/ctm/workspace/ctm/src/main/resources/dev/CTMConfig.json /home/gitactionuser/
+           docker build -t git-action-test /home/gitactionuser/test/
+           echo "<.. End build  docker image"
+           echo "Sart run docker image ..>"
+           docker run -d  --network development_network --network-alias git-action-test_network -v /home/gitactionuser/test/logs:/logs --name git-action-test git-action-test
+           echo "<.. End run docker image"
