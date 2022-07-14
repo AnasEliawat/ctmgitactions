@@ -1,10 +1,10 @@
 # This is a basic workflow for build and run docker file
-name: [auto]build-run-docker
+name: [auto]-build-run-docker
 
 # Only trigger, when the build workflow succeeded
 on:
   workflow_run:
-    workflows: ["pull-install-source-code"]
+    workflows: ["[auto]-pull-install-source-code"]
     types:
       - completed
       
