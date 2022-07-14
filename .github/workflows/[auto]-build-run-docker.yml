@@ -1,5 +1,5 @@
 # This is a basic workflow for build and run docker file
-name: build-run-docker-[auto]
+name: [auto]build-run-docker
 
 # Only trigger, when the build workflow succeeded
 on:
