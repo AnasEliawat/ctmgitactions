@@ -1,5 +1,5 @@
 # This is a basic workflow for pull and build CTM using GitHub Actions
-name: pull-install-source-code
+name: [auto]-pull-install-source-code
 
 # Controls when the action will run. Triggers the workflow on push request
 # events but only for the main branch
