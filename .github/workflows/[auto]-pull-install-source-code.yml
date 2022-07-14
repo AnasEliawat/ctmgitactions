@@ -1,4 +1,4 @@
-# This is a basic workflow for pull and build CTM using GitHub Actions
+# This is a basic workflow for pull and build CTM using GitHub Actions.
 name: [auto]-pull-install-source-code
 
 # Controls when the action will run. Triggers the workflow on push request
