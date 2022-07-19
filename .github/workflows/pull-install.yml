@@ -46,10 +46,10 @@ jobs:
         env:
           HOST: ${{ secrets.SSH_HOST }}
           USERNAME: ${{ secrets.SSH_USERNAME }}
-          PORT: 22
+          PORT: 10022
           KEY: ${{ secrets.SSH_KEY }}
         with:
-          source: "*"
+          source: "Dockerfile"
           target: "/home/gitactionuser/test"        
 
       
