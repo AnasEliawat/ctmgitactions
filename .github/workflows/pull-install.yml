@@ -51,5 +51,6 @@ jobs:
         with:
           source: "*/*fat.jar,src/resources/*Dockerfile"
           target: "/home/gitactionuser/test"
+          strip_components: 2
 
       
