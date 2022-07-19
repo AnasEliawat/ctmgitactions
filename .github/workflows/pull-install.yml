@@ -49,7 +49,7 @@ jobs:
           PORT: 10022
           KEY: ${{ secrets.SSH_KEY }}
         with:
-          source: "src/resources/*Dockerfile"
+          source: "*/*fat.jar,src/resources/*Dockerfile"
           target: "/home/gitactionuser/test"
 
       
